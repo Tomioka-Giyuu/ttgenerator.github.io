@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>TT Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script> 
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</head>
+<body class="body">
+<div class="container-fluid px-0">
+    <nav class="navbar navbar-expand-md navbar-dark bg-black px-0">
+        <a class="navbar-brand mr-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="logo" src="./images/pngegg.png"> &nbsp;&nbsp;&nbsp;TimeTable Generator<span class="dropdown-toggle"></span></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Add Faculty</a>
+            <a class="dropdown-item" href="#">Log Out</a>
+        </div>
+
+        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./home.html"><span class="fa fa-home"></span>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="fa fa-list-alt"></span>Services</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><span class="fa fa-arrow-right"></span>Make TimeTable</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><span class="fa fa-info-circle"></span>About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="form1">
+    <div class="datainput">
+        Enter Faculty <hr>
+    </div>
+    <div class="dropp">
+        <div class="dropp-header">
+          <span class="dropp-header__title js-value">Choose an option</span> 
+          <a href="#" class="dropp-header__btn js-dropp-action">
+            <i class="icon"></i>
+          </a> 
+        </div>
+        <div class="dropp-body">
+          <label for="optA">Option A
+            <input type="radio" id="optA" name="dropp" value="Option A">
+          </label>
+          <label for="optB">Option B
+            <input type="radio" id="optB" name="dropp" value="Option B">
+          </label>
+          <label for="optC">Option C
+            <input type="radio" id="optC" name="dropp" value="Option C">
+          </label>
+          <label for="optD">Option D
+            <input type="radio" id="optD" name="dropp" value="Option D">
+          </label>
+        </div>
+      </div>
+</div>
+<!--Javascript-->
+<script>
+ /*js for nav bar */
+  $(document).ready(function(){
+ $(".navbar-brand").click(function(){
+    $(".navbar-toggler").addClass("collapsed");
+    $(".navbar-toggler").attr("aria-expanded","false");
+    $(".navbar-collapse").removeClass("show");
+    });
+  });
+
+  $(document).ready(function() {
+
+// Default dropdown action to show/hide dropdown content
+$('.js-dropp-action').click(function(e) {
+  e.preventDefault();
+  $(this).toggleClass('js-open');
+  $(this).parent().next('.dropp-body').toggleClass('js-open');
+});
+
+// Using as fake input select dropdown
+$('label').click(function() {
+  $(this).addClass('js-open').siblings().removeClass('js-open');
+  $('.dropp-body,.js-dropp-action').removeClass('js-open');
+});
+// get the value of checked input radio and display as dropp title
+$('input[name="dropp"]').change(function() {
+  var value = $("input[name='dropp']:checked").val();
+  $('.js-value').text(value);
+});
+
+});
+
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
